@@ -19,8 +19,16 @@ def home():
     form = UploadFileForm()
     if form.validate_on_submit():
         file = form.file.data # First grab the file
-        file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(file.filename))) # Then save the file
-        return  render_template('response.html', form=form)
+
+        # Parsing the file name from the extension
+        filename = os.path.splitext(file.filename)[0]
+        fileExtension = os.path.splitext(file.filename)[1]
+        
+        print("This is the filename: ", filename)
+        print("This is the file extension: ", fileExtension)
+
+        # file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(file.filename))) # Then save the file
+        # return  render_template('response.html', form=form)
     return render_template('index.html', form=form)
 
 if __name__ == '__main__':
