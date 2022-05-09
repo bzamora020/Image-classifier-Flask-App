@@ -143,6 +143,9 @@ parser.set_defaults(store_name='NONE')
 # data = parse_file(args.testing_file)
 #--------------------------
 
+# BRYAN's notes - TODO: Modify function to take parameters rather than args, so it can be directly called by main.
+
+
 args = parser.parse_args()
 
 root_dir = './pretrained_models/'
