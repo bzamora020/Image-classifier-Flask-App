@@ -2,13 +2,13 @@ import os
 import json
 from xml.dom import InvalidAccessErr
 import numpy as np
-import cv2
+# import cv2
 import torch
 import torch.nn.functional as F
 import argparse
 
-from mv3d import config
-from mv3d.eval import config as eval_config
+# from mv3d import config
+# from mv3d.eval import config as eval_config
 
 #imports from demo.py
 from torchvision import transforms
@@ -65,7 +65,7 @@ def classify(depth_preds):
     H = W = 384
     n_total_pixels = H*W
 
-    f = open("results.txt",'w')
+    f = open("/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/static/files/results/results.txt",'w')
 
     mean = 0
     all_prob = []
@@ -179,6 +179,8 @@ trans_rgb = transforms.Compose([transforms.Resize(512, interpolation=PIL.Image.B
 
 #save results
 img_path = Path(args.img_path)
+print("This is the filepath: ", img_path, "\n")
+
 if img_path.is_file():
     save_outputs(args.img_path, os.path.splitext(os.path.basename(args.img_path))[0])
 elif img_path.is_dir():
