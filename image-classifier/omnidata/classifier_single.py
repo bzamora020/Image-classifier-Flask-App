@@ -2,13 +2,9 @@ import os
 import json
 from xml.dom import InvalidAccessErr
 import numpy as np
-# import cv2
 import torch
 import torch.nn.functional as F
 import argparse
-
-# from mv3d import config
-# from mv3d.eval import config as eval_config
 
 # imports from demo.py
 from torchvision import transforms
@@ -170,8 +166,6 @@ def classifier(img_path):
 
     # save results
 
-    # print("This is the filepath inside of classifier_single: ", img_path, "\n")
-
     if Path(img_path).is_file():
         output_file_name = os.path.splitext(os.path.basename(img_path))[0]
 
@@ -207,6 +201,7 @@ def classifier(img_path):
     
 
     # I dont think we need this case since we are taking in one image
+    
     # elif Path(img_path).is_dir():
     #     for f in glob.glob(img_path+'/*'):
     #         save_outputs(f, os.path.splitext(os.path.basename(f))[0])
