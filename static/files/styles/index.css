@@ -5,22 +5,32 @@
 }
 
 #form {
-    margin-top: 200px;
+    margin-top: 20px;
     margin-left: 500px;
 }
 
 #how {
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: black;
     text-align: center;
 }
 
-
-
-#description{
+#description {
     margin-left: 400px;
     font-size: 18px;
     text-align: center;
     width: 600px;
+}
+
+#example {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    outline-style: solid;
+}
+
+#sample_text {
+    text-align: center;
 }
