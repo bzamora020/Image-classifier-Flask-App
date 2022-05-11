@@ -137,7 +137,7 @@ def classifier(img_path):
 
     # --------------------------
 
-    root_dir = '/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/image_classifier/omnidata/pretrained_models/'
+    root_dir = '/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/image-classifier/omnidata/pretrained_models/'
 
     output_path = '/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/static/files/results/'
 

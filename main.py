@@ -7,7 +7,7 @@ import sys
 from wtforms.validators import InputRequired
 
 
-sys.path.append('/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/image_classifier/omnidata')
+sys.path.append('/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/image-classifier/omnidata')
 
 import classifier_single
 # from image_classifier.omnidata import classifier_single
