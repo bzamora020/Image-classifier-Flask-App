@@ -3,11 +3,20 @@ from flask_wtf import FlaskForm
 from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 import os
+import sys
 from wtforms.validators import InputRequired
+
+
+sys.path.append('/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/image_classifier/omnidata')
+
+import classifier_single
+# from image_classifier.omnidata import classifier_single
+
+# sys.path.append(os.path.abspath("classifier-flask-app/image-classifier/omnidata")) from classifier_single import *
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
-app.config['UPLOAD_FOLDER'] = 'static/files'
+app.config['UPLOAD_FOLDER'] = 'static/files/classifier'
 
 class UploadFileForm(FlaskForm):
     file = FileField("File", validators=[InputRequired()])
@@ -21,13 +30,20 @@ def home():
         file = form.file.data # First grab the file
 
         # Parsing the file name from the extension
-        filename = os.path.splitext(file.filename)[0]
-        fileExtension = os.path.splitext(file.filename)[1]
         
-        print("This is the filename: ", filename)
-        print("This is the file extension: ", fileExtension)
+        # filename = os.path.splitext(file.filename)[0]
+        # fileExtension = os.path.splitext(file.filename)[1]
+        
+        # print("This is the filename: ", filename)
+        # print("This is the file extension: ", fileExtension)
 
-        # file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(file.filename))) # Then save the file
+        newname = "1" + os.path.splitext(file.filename)[1]
+        file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(newname))) # Then save the file
+        filepath = (os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(newname)))
+        # print("This is the newname: ", newname)
+        print("Filepath: ", filepath, '\n')
+        
+        classifier_single.classifier(filepath)
         # return  render_template('response.html', form=form)
     return render_template('index.html', form=form)
 
