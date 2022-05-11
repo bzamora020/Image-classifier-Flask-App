@@ -46,7 +46,7 @@ def home():
                   app.config['UPLOAD_FOLDER'], secure_filename(newname)))  # Then save the file
         filepath = (os.path.join(os.path.abspath(os.path.dirname(
             __file__)), app.config['UPLOAD_FOLDER'], secure_filename(newname)))
-        # print("This is the newname: ", newname)
+
         print("Filepath: ", filepath, '\n')
 
         result = classifier_single.classifier(filepath)

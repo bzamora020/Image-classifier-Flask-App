@@ -7,22 +7,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='files/styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='files/styles/results.css') }}">
     <title>Home</title>
 </head>
 
 <body>
-    <h1 id="title">Indoor/Outdoor Classifier</h1>
+    <h1 id="title">Indoor/Outdoor Classifier - Web App</h1>
 
-    <div>
-        <p>RGB Image</p>
-        <img id="rgb" src="static/files/results/1_rgb.png">
-        <p>Depth Maps</p>
-        <img id="depth" src="static/files/results/1_depth.png">
+    <div class="container">
+        <div class="column">
+            <p class="img_title">RGB Image</p>
+            <img src="static/files/results/1_rgb.png">
+        </div>
+        <div class="column">
+            <p class="img_title">Depth Maps</p>
+            <img src="static/files/results/1_depth.png">
+        </div>
     </div>
 
-    <h1 id="result"> Classification: {{result}} </h1>
-
+    <p></p>
+    <div id="classification">
+        <h1 class="test"> Classification: </h1>
+        <h1 data-status="{{result}}" class="status">{{result}}</h1>
+    </div>
 
     <form id="form" method='POST' enctype='multipart/form-data'>
 

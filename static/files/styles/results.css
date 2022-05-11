@@ -1,0 +1,61 @@
+#title {
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#form {
+    margin-top: 20px;
+    margin-left: 550px;
+}
+
+.img_title {
+    text-align: center;
+}
+
+/* From column to container after are the atributes to have images next to each other */
+
+.column {
+    float: left;
+    width: 40%;
+    margin-right: 15px;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    margin-left: 200px;
+}
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.img_title {
+    font-size: 20px;
+}
+
+/* This is to dinamically display the color */
+
+.status[data-status="Indoors"] {
+    color: blue;
+}
+
+.status[data-status="Outdoors"] {
+    color: red;
+
+}
+
+#classification {
+    display: flex;
+    margin-left: 550px;
+}
+
+.test {
+    margin-right: 3px;
+}
