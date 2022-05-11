@@ -198,10 +198,9 @@ def classifier(img_path):
             print(f'Writing output {save_path} ...')
             print(f'classification result: {class_result}')
             return "Outdoors" if class_result == 1 else "Indoors"
-    
 
     # I dont think we need this case since we are taking in one image
-    
+
     # elif Path(img_path).is_dir():
     #     for f in glob.glob(img_path+'/*'):
     #         save_outputs(f, os.path.splitext(os.path.basename(f))[0])

@@ -10,7 +10,7 @@
 }
 
 #how {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 20px;
     color: black;
     text-align: center;
@@ -33,4 +33,11 @@
 
 #sample_text {
     text-align: center;
+}
+
+#credits {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #595959;
 }
