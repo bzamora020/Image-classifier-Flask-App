@@ -12,22 +12,26 @@
 </head>
 
 <body>
-    <h1>Indoor/Outdoor Classifier</h1>
-    <form method='POST' enctype='multipart/form-data'>
+    <h1 id="title">Indoor/Outdoor Classifier</h1>
+
+    <div>
+        <p>RGB Image</p>
+        <img id="rgb" src="static/files/results/1_rgb.png">
+        <p>Depth Maps</p>
+        <img id="depth" src="static/files/results/1_depth.png">
+    </div>
+
+    <h1 id="result"> Classification: {{result}} </h1>
+
+
+    <form id="form" method='POST' enctype='multipart/form-data'>
 
         {{form.hidden_tag()}}
         {{form.file()}}
         {{form.submit()}}
     </form>
 
-    <div>
-        <p>RGB Image</p>
-        <img src="static/files/results/1_rgb.png">
-        <p>Depth Maps</p>
-        <img src="static/files/results/1_depth.png">
-    </div>
 
-    <h1> Classification: {{result}} </h1>
 
 </body>
 
