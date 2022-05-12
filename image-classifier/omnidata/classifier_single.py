@@ -4,7 +4,6 @@ from xml.dom import InvalidAccessErr
 import numpy as np
 import torch
 import torch.nn.functional as F
-import argparse
 
 # imports from demo.py
 from torchvision import transforms
@@ -15,10 +14,8 @@ import matplotlib.pyplot as plt
 
 import os.path
 from pathlib import Path
-import glob
 import sys
 
-import pdb
 
 from modules.unet import UNet
 from modules.midas.dpt_depth import DPTDepthModel
@@ -133,8 +130,9 @@ def classifier(img_path):
 
     # --------------------------
 
+    # Directory for the pre-trained models
     root_dir = '/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/image-classifier/omnidata/pretrained_models/'
-
+    # path for the output
     output_path = '/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/static/files/results/'
 
     os.system(f"mkdir -p {output_path}")
