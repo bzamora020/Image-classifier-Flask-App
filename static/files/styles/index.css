@@ -4,9 +4,10 @@
     text-align: center;
 }
 
-#form {
+#formContainer {
     margin-top: 20px;
-    margin-left: 500px;
+    display: flex;
+    justify-content: center;
 }
 
 #how {

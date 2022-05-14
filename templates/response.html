@@ -31,14 +31,9 @@
         <h1 data-status="{{result}}" class="status">{{result}}</h1>
     </div>
 
-    <form id="form" method='POST' enctype='multipart/form-data'>
-
-        {{form.hidden_tag()}}
-        {{form.file()}}
-        {{form.submit()}}
-    </form>
-
-
+    <div id="button_container">
+        <button id="home_button" onclick="window.location.href='/'">Home Page</button>
+    </div>
 
 </body>
 

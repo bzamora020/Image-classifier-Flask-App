@@ -1,18 +1,18 @@
-
-from flask import Flask, render_template
+import sys
+import os
+from flask import Flask, render_template, flash
 from flask_wtf import FlaskForm
 from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
-import os
-import sys
 from wtforms.validators import InputRequired
 
 
 sys.path.append(
     '/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/image-classifier/omnidata')
+import classifier_single
+
 
 # from image_classifier.omnidata import classifier_single
-import classifier_single
 
 # sys.path.append(os.path.abspath("classifier-flask-app/image-classifier/omnidata")) from classifier_single import *
 
@@ -30,7 +30,10 @@ class UploadFileForm(FlaskForm):
 @app.route('/home', methods=['GET', "POST"])
 def home():
     form = UploadFileForm()
+
     if form.validate_on_submit():
+        render_template('processing.html')
+        flash("Image being processed\n")
         file = form.file.data  # First grab the file
 
         # Parsing the file name from the extension
@@ -42,15 +45,15 @@ def home():
         # print("This is the file extension: ", fileExtension)
 
         newname = "1" + os.path.splitext(file.filename)[1]
-        file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),
-                  app.config['UPLOAD_FOLDER'], secure_filename(newname)))  # Then save the file
+
         filepath = (os.path.join(os.path.abspath(os.path.dirname(
             __file__)), app.config['UPLOAD_FOLDER'], secure_filename(newname)))
+        # print("Filepath: ", filepath, '\n')
 
-        print("Filepath: ", filepath, '\n')
+        file.save(filepath)  # Then save the file
 
         result = classifier_single.classifier(filepath)
-        return  render_template('response.html', form=form, result = result)
+        return render_template('response.html', form=form, result=result)
     return render_template('index.html', form=form)
 
 

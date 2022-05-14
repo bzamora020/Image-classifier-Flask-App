@@ -20,13 +20,14 @@
         are shown, and whether the image is indoors or outdoors.</p>
     <h5 id="sample_text">Example output below</h5>
     <img id="example" src="static/files/images/example.png">
+    <div id="formContainer">
 
-    <form id="form" method='POST' enctype='multipart/form-data'>
-        {{form.hidden_tag()}}
-        {{form.file()}}
-        {{form.submit()}}
-    </form>
-
+        <form id="form" method='POST' enctype='multipart/form-data'>
+            {{form.hidden_tag()}}
+            {{form.file()}}
+            {{form.submit()}}
+        </form>
+    </div>
 
 
 </body>
