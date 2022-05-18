@@ -63,8 +63,7 @@ def classify(depth_preds):
     H = W = 384
     n_total_pixels = H*W
 
-    f = open("/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/static/files/results/results.txt", 'w')
-
+    f = open("./static/files/results/results.txt", 'w')
     mean = 0
     all_prob = []
     
@@ -142,12 +141,10 @@ def classify(depth_preds):
 def classifier(img_path):
 
     # --------------------------
-
     # Directory for the pre-trained models
-    root_dir = '/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/image-classifier/omnidata/pretrained_models/'
+    root_dir = './image-classifier/omnidata/pretrained_models/'
     # path for the output
-    output_path = '/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/static/files/results/'
-
+    output_path = './static/files/results/'
     os.system(f"mkdir -p {output_path}")
     map_location = (lambda storage, loc: storage.cuda()
                     ) if torch.cuda.is_available() else torch.device('cpu')
