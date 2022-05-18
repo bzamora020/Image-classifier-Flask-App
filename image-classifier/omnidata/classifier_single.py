@@ -67,6 +67,9 @@ def classify(depth_preds):
 
     mean = 0
     all_prob = []
+    
+    x_axis = ranges[1:]
+    y_axis = []
 
     for i in range(n_ranges):
 
@@ -85,9 +88,19 @@ def classify(depth_preds):
 
         res = [f'{avg_perc_valid:6.3f}', '\n']
         f.writelines(res)
+        
+        y_axis.append(avg_perc_valid)
 
         # calculate mean
         mean += max_depth*avg_perc_valid
+    
+    plt.plot(x_axis, y_axis)
+    plt.xlabel('Depth Distribution')
+    plt.ylabel('Percentage of valid pixels')
+    plt.savefig('static/files/results/plot.png', dpi=300, bbox_inches='tight')
+
+    plt.clf()
+
 
     # calculate percentage of invalid pixels------------------------------------------
     invalid_pixels = (depth_preds == 0).astype(np.float32)
@@ -170,8 +183,8 @@ def classifier(img_path):
         with torch.no_grad():
             save_path = os.path.join(
                 output_path, f'{output_file_name}_depth.png')
-
-            print(f'Reading input {img_path} ...')
+            print("\n")
+            print(f'Reading input {img_path} ...', '\n')
             img = Image.open(img_path)
 
             img_tensor = trans_totensor(img)[:3].unsqueeze(0).to(device)

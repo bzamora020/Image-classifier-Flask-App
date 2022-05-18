@@ -2,18 +2,16 @@
     margin-top: 20px;
     color: black;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
-.img_title {
-    text-align: center;
-}
+
 
 /* From column to container after are the atributes to have images next to each other */
 
 .column {
     float: left;
-    width: 40%;
+    width: 30%;
     margin-right: 15px;
 }
 
@@ -22,7 +20,7 @@ img {
 }
 
 .container {
-    margin-left: 200px;
+    margin-left: 40px;
 }
 
 .container::after {
@@ -33,6 +31,8 @@ img {
 
 .img_title {
     font-size: 20px;
+    text-align: center;
+
 }
 
 /* This is to dinamically display the color */
@@ -48,7 +48,8 @@ img {
 
 #classification {
     display: flex;
-    margin-left: 530px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .test {
@@ -66,4 +67,9 @@ img {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+}
+
+#plot {
+    margin-top: 50px;
+    width: 120%;
 }
