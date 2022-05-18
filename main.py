@@ -7,14 +7,9 @@ from werkzeug.utils import secure_filename
 from wtforms.validators import InputRequired
 
 
-sys.path.append(
-    '/home/ersp21/Desktop/ERSP-21/codeBackup/classifier-flask-app/image-classifier/omnidata')
+sys.path.append('./image-classifier/omnidata/')
 import classifier_single
 
-
-# from image_classifier.omnidata import classifier_single
-
-# sys.path.append(os.path.abspath("classifier-flask-app/image-classifier/omnidata")) from classifier_single import *
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -32,23 +27,12 @@ def home():
     form = UploadFileForm()
 
     if form.validate_on_submit():
-        render_template('processing.html')
-        flash("Image being processed\n")
         file = form.file.data  # First grab the file
-
-        # Parsing the file name from the extension
-
-        # filename = os.path.splitext(file.filename)[0]
-        # fileExtension = os.path.splitext(file.filename)[1]
-
-        # print("This is the filename: ", filename)
-        # print("This is the file extension: ", fileExtension)
 
         newname = "1" + os.path.splitext(file.filename)[1]
 
         filepath = (os.path.join(os.path.abspath(os.path.dirname(
             __file__)), app.config['UPLOAD_FOLDER'], secure_filename(newname)))
-        # print("Filepath: ", filepath, '\n')
 
         file.save(filepath)  # Then save the file
 
