@@ -1,6 +1,6 @@
 import sys
 import os
-from flask import Flask, render_template, flash
+from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename

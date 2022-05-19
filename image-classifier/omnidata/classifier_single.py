@@ -21,37 +21,6 @@ import sys
 from modules.midas.dpt_depth import DPTDepthModel
 
 
-# Extrapolated this function to include it within classifier() because we needed some variables to be global for it to work
-
-# def save_outputs(img_path, output_file_name):
-#     with torch.no_grad():
-#         save_path = os.path.join(output_path, f'{output_file_name}_depth.png')
-
-#         print(f'Reading input {img_path} ...')
-#         img = Image.open(img_path)
-
-#         img_tensor = trans_totensor(img)[:3].unsqueeze(0).to(device)
-
-#         rgb_path = os.path.join(output_path, f'{output_file_name}_rgb.png')
-#         trans_rgb(img).save(rgb_path)
-
-#         if img_tensor.shape[1] == 1:
-#             img_tensor = img_tensor.repeat_interleave(3, 1)
-
-#         output = model(img_tensor).clamp(min=0, max=1)
-
-#         class_result = classify(output.cpu().numpy())
-
-#         output = F.interpolate(output.unsqueeze(
-#             0), (512, 512), mode='bicubic').squeeze(0)
-#         output = output.clamp(0, 1)
-#         output = 1 - output
-#         plt.imsave(save_path, output.detach().cpu().squeeze(), cmap='viridis')
-
-#         print(f'Writing output {save_path} ...')
-#         print(f'classification result: {class_result}')
-
-
 def classify(depth_preds):
     threshold = 0.02
 
