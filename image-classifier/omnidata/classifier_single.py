@@ -1,6 +1,4 @@
 import os
-import json
-from xml.dom import InvalidAccessErr
 import numpy as np
 import torch
 import torch.nn.functional as F
@@ -20,9 +18,7 @@ from pathlib import Path
 import sys
 
 
-from modules.unet import UNet
 from modules.midas.dpt_depth import DPTDepthModel
-from data.transforms import get_transform
 
 
 # Extrapolated this function to include it within classifier() because we needed some variables to be global for it to work
