@@ -8,6 +8,9 @@ import torch.nn.functional as F
 # imports from demo.py
 from torchvision import transforms
 
+
+import matplotlib
+matplotlib.use('Agg')
 import PIL
 from PIL import Image
 import matplotlib.pyplot as plt
