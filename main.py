@@ -7,6 +7,10 @@ from werkzeug.utils import secure_filename
 from wtforms.validators import InputRequired
 
 
+# Current patch for mac. Uncomment bottom for it to work
+
+# os.environ['KMP_DUPLICATE_LIB_OK']='True'
+
 sys.path.append('./image-classifier/omnidata/')
 import classifier_single
 
