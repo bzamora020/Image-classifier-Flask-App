@@ -61,12 +61,6 @@ def classify(depth_preds):
         # calculate mean
         mean += max_depth*avg_perc_valid
     
-    plt.plot(x_axis, y_axis)
-    plt.xlabel('Depth Distribution')
-    plt.ylabel('Percentage of valid pixels')
-    plt.savefig('static/files/results/plot.png', dpi=300, bbox_inches='tight')
-
-    plt.clf()
 
 
     # calculate percentage of invalid pixels------------------------------------------
@@ -86,6 +80,20 @@ def classify(depth_preds):
     std = pow(std, 0.5)
     print(f'mean: {mean:.3f}')
     print(f'standard deviation of the probability distribution: {std:.3f}')
+
+
+    # Creating the plot
+    
+    plot_title = "Standard Deviation: " + '{:.3f}'.format(std)
+    
+    plt.title(plot_title)
+    plt.plot(x_axis, y_axis)
+    plt.xlabel('Depth Distribution')
+    plt.ylabel('Percentage of valid pixels')
+    plt.savefig('static/files/results/plot.png', dpi=300, bbox_inches='tight')
+
+    plt.clf()
+
 
     # classifies
     if (std > threshold):

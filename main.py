@@ -8,7 +8,7 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 
 # Current patch for mac. Uncomment bottom for it to work
 
-os.environ['KMP_DUPLICATE_LIB_OK']='True'
+# os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 sys.path.append('./image-classifier/omnidata/')
 import classifier_single
