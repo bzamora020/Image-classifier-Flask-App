@@ -21,6 +21,7 @@ The link for the google drive with the pre trained models can be found [Here](ht
 
 ** Note ** For mac users, it might be required to uncomment
  `os.environ['KMP_DUPLICATE_LIB_OK']='True' ` 
+ 
 This will allow the app to run properly. Located in main.py
 
 
