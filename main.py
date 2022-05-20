@@ -15,8 +15,9 @@ import classifier_single
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = 'static/files/classifier'
+
+app.config['SECRET_KEY'] = 'supersecretkey'
 
 
 class UploadFileForm(FlaskForm):

@@ -1,45 +1,48 @@
 #title {
-    margin-top: 20px;
-    color: black;
-    text-align: center;
+  margin-top: 20px;
+  color: black;
+  text-align: center;
 }
 
 #formContainer {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 #how {
-    margin-top: 45px;
-    margin-bottom: 10px;
-    color: black;
-    text-align: center;
+  margin-top: 45px;
+  margin-bottom: 10px;
+  color: black;
+  text-align: center;
 }
 
 #description {
-    margin-left: 380px;
-    font-size: 18px;
-    text-align: center;
-    width: 680px;
-    margin-bottom: 50px;
+  font-size: 18px;
+  text-align: center;
+  width: 680px;
+  margin-bottom: 50px;
+}
+#desHolder {
+  justify-content: center;
+  display: flex;
 }
 
 #example {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    outline-style: solid;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  outline-style: solid;
 }
 
 #sample_text {
-    text-align: center;
+  text-align: center;
 }
 
 #credits {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 10px;
-    color: #595959;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #595959;
 }

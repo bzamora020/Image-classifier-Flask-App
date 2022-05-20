@@ -1,75 +1,74 @@
 #title {
-    margin-top: 20px;
-    color: black;
-    text-align: center;
-    margin-bottom: 50px;
+  margin-top: 20px;
+  color: black;
+  text-align: center;
+  margin-bottom: 50px;
 }
-
-
 
 /* From column to container after are the atributes to have images next to each other */
 
 .column {
-    float: left;
-    width: 30%;
-    margin-right: 15px;
+  float: left;
+  width: 30%;
+  margin-right: 20px;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 .container {
-    margin-left: 40px;
+    display: flex;
+    justify-content: center;
 }
 
 .container::after {
-    content: "";
-    clear: both;
-    display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .img_title {
-    font-size: 20px;
-    text-align: center;
-
+  font-size: 20px;
+  text-align: center;
 }
 
 /* This is to dinamically display the color */
 
 .status[data-status="Indoors"] {
-    color: blue;
+  color: blue;
 }
 
 .status[data-status="Outdoors"] {
-    color: red;
-
+  color: red;
 }
 
 #classification {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.test {
-    margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 
 #home_button {
-    font-size: 19px;
-    border: 2px solid #555555;
-    border-radius: 5px;
+  font-size: 19px;
+  border: 2px solid #555555;
+  border-radius: 5px;
 }
 
 #button_container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 #plot {
-    margin-top: 50px;
-    width: 120%;
+  /* margin-top: 10px; */
+  width: 100%;
+  height: 100%;
+}
+
+#conCenter {
+  display: flex;
+  justify-content: center !important;
 }
