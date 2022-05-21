@@ -25,7 +25,7 @@ def classify(depth_preds):
     threshold = 0.02
 
     # omnidata depths are normalized from 0 to 1, window size 0.02
-    ranges = np.arange(0, 1.02, 0.02)
+    ranges = np.arange(0, 1.01, 0.01)
     n_ranges = ranges.shape[0] - 1
 
     H = W = 384
@@ -34,6 +34,7 @@ def classify(depth_preds):
     f = open("./static/files/results/results.txt", 'w')
     mean = 0
     all_prob = []
+    
     
     x_axis = ranges[1:]
     y_axis = []
@@ -73,7 +74,7 @@ def classify(depth_preds):
     # calculate mean & std-------------------------------------------------------------
     mean /= 100  # divide by 100 to get %
     std = 0
-    x = np.arange(0.02, 1.02, 0.02)
+    x = np.arange(0.01, 1.01, 0.01)
 
     for i, prob in zip(x, all_prob):
         std += pow((i-mean), 2)*(prob/100)
@@ -87,10 +88,14 @@ def classify(depth_preds):
     plot_title = "Standard Deviation: " + '{:.3f}'.format(std)
     
     plt.title(plot_title)
+
     plt.plot(x_axis, y_axis)
-    plt.xlabel('Depth Distribution')
-    plt.ylabel('Percentage of valid pixels')
-    plt.savefig('static/files/results/plot.png', dpi=300, bbox_inches='tight')
+    # plt.xticks(np.arange(0.1, 1.01, 0.1))
+    plt.xscale("log")
+    plt.xlabel('Normalized Depth', fontsize= 14)
+    plt.ylabel('Percentage of valid pixels', fontsize= 14)
+    plt.margins(0.01)
+    plt.savefig('static/files/results/plot.png', dpi=300, markersize=12)
 
     plt.clf()
 
